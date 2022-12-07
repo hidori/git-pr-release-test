@@ -4,8 +4,8 @@ on:
     branches:
       - main
 jobs:
-  feat-contract-context:
-    name: main to feat/contractContext
+  feat-cc:
+    name: main to feat/cc
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -16,4 +16,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GIT_PR_RELEASE_BRANCH_STAGING: "main"
-        GIT_PR_RELEASE_BRANCH_PRODUCTION: "feat/contractContext"
+        GIT_PR_RELEASE_BRANCH_PRODUCTION: "feat/cc"
