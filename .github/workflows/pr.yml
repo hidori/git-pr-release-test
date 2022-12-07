@@ -1,0 +1,19 @@
+name: Create PR from main to feat
+on:
+  push:
+    branches:
+      - main
+jobs:
+  feat-contract-context:
+    name: main to feat/contractContext
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 0
+    - name: git-pr-release
+      uses: bakunyo/git-pr-release-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GIT_PR_RELEASE_BRANCH_STAGING: "main"
+        GIT_PR_RELEASE_BRANCH_PRODUCTION: "feat/contractContext"
